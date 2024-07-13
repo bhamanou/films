@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grille-images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colonnes, ajustez selon vos besoins */
+            gap: 20px;
+            /* Espacement entre les items */
+        }
+
+        .grid-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img:first-child {
+            width: 100%;
+            /* Ajustez la largeur de l'image de fond */
+            height: auto;
+            cursor: pointer;
+            /* Définir le pointeur de la souris comme un doigt */
+        }
+
+        .grid-item img:last-child {
+            max-width: 100%;
+            /* Ajustez la largeur de l'affiche du film */
+            height: auto;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-item:hover img:first-child {
+            filter: brightness(70%);
+        }
+
+        .grid-item:hover img:last-child {
+            filter: grayscale(100%);
+        }
+
+        .grid-item:hover h3 {
+            color: #ff6f61;
+        }
+
+        h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .overlay img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="images/71oBx4HShXiJbLwDudGjeY6mHFI.jpg" alt="Image de fond 1"
+                onclick="showImage('images/71oBx4HShXiJbLwDudGjeY6mHFI.jpg')">
+            <img src="images/cB4bZUVZOQlnhXLDzN2yOrQSl5r.jpg" alt="Affiche film 1">
+            <h3>Antigang : La Relève</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/ooi2vJaIvqeq5byrT2tIe9xJCaP.jpg" alt="Image de fond"
+                onclick="showImage('images/ooi2vJaIvqeq5byrT2tIe9xJCaP.jpg')">
+            <img src="images/ubpTNzKdixPuzPdSmko96PwnzjM.jpg" alt="Affiche film">
+            <h3>Braqueurs amateurs</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/t4mzypFVjY6toyBXAmfrIaWcUXa.jpg" alt="Image de fond"
+                onclick="showImage('images/t4mzypFVjY6toyBXAmfrIaWcUXa.jpg')">
+            <img src="images/nrJg7CB2FW35qXgGY0spq6EqDjD.jpg" alt="Affiche film">
+            <h3>Balle perdue</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/707thQazLJiYLBhCrZlRoV05NNL.jpg" alt="Image de fond"
+                onclick="showImage('images/707thQazLJiYLBhCrZlRoV05NNL.jpg')">
+            <img src="images/nrJg7CB2FW35qXgGY0spq6EqDjD.jpg" alt="Affiche film">
+            <h3>Balle perdue 2</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/7Nwnmyzrtd0FkcRyPqmdzTPppQa.jpg" alt="Image de fond"
+                onclick="showImage('images/7Nwnmyzrtd0FkcRyPqmdzTPppQa.jpg')">
+            <img src="images/dQIQZbJXn1pflQw3nwvXLJX0dHa.jpg" alt="Affiche film">
+            <h3>Le Loup de Wall Street</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/xjnxyYqsgRDF9NmuNF19kHHu0Yg.jpg" alt="Image de fond"
+                onclick="showImage('images/xjnxyYqsgRDF9NmuNF19kHHu0Yg.jpg')">
+            <img src="images/hZlR7A9OUVZ7ogrPq5ukJKsxN9Y.jpg" alt="Affiche film">
+            <h3>Elysium</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/ibKeXahq4JD63z6uWQphqoJLvNw.jpg" alt="Image de fond"
+                onclick="showImage('images/ibKeXahq4JD63z6uWQphqoJLvNw.jpg')">
+            <img src="images/sKmxFCYGSync2zH94Aukzcp8yYA.jpg" alt="Affiche film">
+            <h3>En eaux troubles</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/haIHcieOlTlyAUr9cWukqyK5SaU.jpg" alt="Image de fond"
+                onclick="showImage('images/haIHcieOlTlyAUr9cWukqyK5SaU.jpg')">
+            <img src="images/cLkVnUWFwt39ikAojwdFuOwNTwH.jpg" alt="Affiche film">
+            <h3>Braquage à l'italienne</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/iMz5ieKyFSFnjZZEci5oE7A9m2p.jpg" alt="Image de fond"
+                onclick="showImage('images/iMz5ieKyFSFnjZZEci5oE7A9m2p.jpg')">
+            <img src="images/rZxtqAKfOUMchFlhViM03vSxiQX.jpg" alt="Affiche film">
+            <h3>Le Mytho</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/v8lPo8UWKyP2tIXD8N64HfNP4Pw.jpg" alt="Image de fond"
+                onclick="showImage('images/v8lPo8UWKyP2tIXD8N64HfNP4Pw.jpg')">
+            <img src="images/4Odr5SZBvY6gMQaxmlg72nqVHhI.jpg" alt="Affiche film">
+            <h3>Amour & amnésie</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/qpBZE42SBLMJKNSxgW5wGc8Ip9e.jpg" alt="Image de fond"
+                onclick="showImage('images/qpBZE42SBLMJKNSxgW5wGc8Ip9e.jpg')">
+            <img src="images/kRbpUTRNm6QbLQFPFWUcNC4czEm.jpg" alt="Affiche film">
+            <h3>Lucy</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/e3xcYVsoR5dfVM0kq1l0BTkSgzJ.jpg" alt="Image de fond"
+                onclick="showImage('images/e3xcYVsoR5dfVM0kq1l0BTkSgzJ.jpg')">
+            <img src="images/9GR7lgBdc8p5FivR3u3B2r3LjwO.jpg" alt="Affiche film">
+            <h3>No Escape</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/7zS58YPAw002RNejOF1vNB3XHbW.jpg" alt="Image de fond"
+                onclick="showImage('images/7zS58YPAw002RNejOF1vNB3XHbW.jpg')">
+            <img src="images/7kSRmdf80BART95tsOhuZkcmde6.jpg" alt="Affiche film">
+            <h3>Ghost Rider</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/t6TL7V9IsT4Ktx6YO8b1UYj3agd.jpg" alt="Image de fond"
+                onclick="showImage('images/t6TL7V9IsT4Ktx6YO8b1UYj3agd.jpg')">
+            <img src="images/lyCmawg4SGjMV4yYv1Qgq4klua9.jpg" alt="Affiche film">
+            <h3>Baywatch : Alerte à Malibu</h3>
+        </div>
+        <div class="grid-item">
+            <img src="images/9vAoubhoZE8aSkUZoSfxs3UWZhO.jpg" alt="Image de fond"
+                onclick="showImage('images/9vAoubhoZE8aSkUZoSfxs3UWZhO.jpg')">
+            <img src="images/tcV0DA04Ug4pHbPZkPZxohoMHCj.jpg" alt="Affiche film">
+            <h3>Equalizer</h3>
+        </div>
+    </div>
+    <div class="overlay" onclick="hideImage()">
+        <img id="overlay-img" src="" alt="Image en grand">
+    </div>
+
+    <script>
+        function showImage(imageUrl) {
+            const overlay = document.querySelector('.overlay');
+            const overlayImg = document.getElementById('overlay-img');
+            overlayImg.src = imageUrl;
+            overlay.style.display = 'flex'; // Affiche l'overlay
+        }
+
+        function hideImage() {
+            const overlay = document.querySelector('.overlay');
+            overlay.style.display = 'none'; // Masque l'overlay
+        }
+    </script>
+
+</body>
+
+</html>
